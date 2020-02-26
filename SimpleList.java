@@ -9,7 +9,7 @@ package cse360assign2;
 public class SimpleList {
 	
 	/**
-	 * The SimpleList Class provided 6 methods to handle
+	 * The SimpleList Class provided 9 methods to handle
 	 * integer list and count.
 	 */
 	
@@ -147,6 +147,53 @@ public class SimpleList {
 		}
 		return location;
 	}
+	
+	public void append(int integer) {
+		
+		/**
+		 * Append method work for adding a integer to the end of list and 
+		 * increasing the count. If the list was full then increase the 
+		 * size by 50%.
+		 * 
+		 * @param integer the element would be add in the list.
+		 */
+		
+		if(count == list.length) {
+			double size = list.length + Math.floor(list.length * 0.5);
+			int length = (int) size;
+			int[] newList = new int[length];
+			System.arraycopy(list, 0, newList, 0, list.length);
+			list = newList;
+		}
+		list[count] = integer;
+		count +=1;
+	}
+	
+	public int first() {
+		
+		/**
+		 * The first method return the first element in the list.
+		 * 
+		 * @return the first element in the list.
+		 */
+		
+		return list[0];
+	}
+	
+	public int size() {
+		
+		/**
+		 * The size method return the current number of possible location
+		 * in the list.
+		 * 
+		 * @return the number of possible location.
+		 */
+		
+		int possibleLocations = list.length - count;
+		return possibleLocations;
+	}
+	
+	
 	
 	
 
