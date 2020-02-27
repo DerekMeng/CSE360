@@ -180,6 +180,27 @@ public class SimpleList {
 		return list[0];
 	}
 	
+	public int last() {
+		
+		/**
+		 * The last method return the last element in the list.
+		 * 
+		 * @return if there are no elements in the list return -1.
+		 * if there are elements in the list return the the last
+		 * element in the list.
+		 */
+		
+		int lastElement = 0;
+		if(count == 0) {
+			lastElement = -1;
+		}
+		else {
+			lastElement = list[count -1];
+		}
+		
+		return lastElement;
+	}
+	
 	public int size() {
 		
 		/**
